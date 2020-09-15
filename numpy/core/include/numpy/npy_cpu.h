@@ -103,7 +103,7 @@
     #define NPY_CPU_ARCEB
 #elif defined(__riscv) && defined(__riscv_xlen) && __riscv_xlen == 64
     #define NPY_CPU_RISCV64
-#elif defined(__EMSCRIPTEN__)
+#elif (defined(__EMSCRIPTEN__) || defined(__wasm__))
     /* __EMSCRIPTEN__ is defined by emscripten: an LLVM-to-Web compiler */
     #define NPY_CPU_WASM
 #else
