@@ -117,4 +117,68 @@
 
 #endif /* defined(HAVE_FEATURES_H) */
 
+// WebAssembly overrides
+#ifdef __wasm__
+
+// Switch off all long-related maths functions
+#undef HAVE_SINL
+#undef HAVE_COSL
+#undef HAVE_TANL
+#undef HAVE_SINHL
+#undef HAVE_COSHL
+#undef HAVE_TANHL
+#undef HAVE_FABSL
+#undef HAVE_FLOORL
+#undef HAVE_CEILL
+#undef HAVE_RINTL
+#undef HAVE_TRUNCL
+#undef HAVE_SQRTL
+#undef HAVE_LOG10L
+#undef HAVE_LOGL
+#undef HAVE_LOG1PL
+#undef HAVE_EXPL
+#undef HAVE_EXPM1L
+#undef HAVE_ASINL
+#undef HAVE_ACOSL
+#undef HAVE_ATANL
+#undef HAVE_ASINHL
+#undef HAVE_ACOSHL
+#undef HAVE_ATANHL
+#undef HAVE_HYPOTL
+#undef HAVE_ATAN2L
+#undef HAVE_POWL
+#undef HAVE_FMODL
+#undef HAVE_MODFL
+#undef HAVE_FREXPL
+#undef HAVE_LDEXPL
+#undef HAVE_EXP2L
+#undef HAVE_LOG2L
+#undef HAVE_COPYSIGNL
+#undef HAVE_NEXTAFTERL
+#undef HAVE_CBRTL
+#undef HAVE_CABSL
+#undef HAVE_CACOSL
+#undef HAVE_CACOSHL
+#undef HAVE_CARGL
+#undef HAVE_CASINL
+#undef HAVE_CASINHL
+#undef HAVE_CATANL
+#undef HAVE_CATANHL
+#undef HAVE_CCOSL
+#undef HAVE_CCOSHL
+#undef HAVE_CEXPL
+#undef HAVE_CIMAGL
+#undef HAVE_CLOGL
+#undef HAVE_CONJL
+#undef HAVE_CPOWL
+#undef HAVE_CPROJL
+#undef HAVE_CREALL
+#undef HAVE_CSINL
+#undef HAVE_CSINHL
+#undef HAVE_CSQRTL
+#undef HAVE_CTANL
+#undef HAVE_CTANHL
+
+#endif 
+
 #endif

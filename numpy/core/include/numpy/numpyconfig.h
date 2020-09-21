@@ -21,6 +21,9 @@
     #endif
 #endif
 
+// WebAssembly overrides
+
+
 /**
  * To help with the NPY_NO_DEPRECATED_API macro, we include API version
  * numbers for specific versions of NumPy. To exclude all API that was
