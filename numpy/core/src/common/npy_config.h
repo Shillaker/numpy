@@ -179,6 +179,6 @@
 #undef HAVE_CTANL
 #undef HAVE_CTANHL
 
-#endif 
+#endif // __wasm__
 
 #endif

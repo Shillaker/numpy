@@ -21,9 +21,6 @@
     #endif
 #endif
 
-// WebAssembly overrides
-
-
 /**
  * To help with the NPY_NO_DEPRECATED_API macro, we include API version
  * numbers for specific versions of NumPy. To exclude all API that was
@@ -44,5 +41,24 @@
 #define NPY_1_17_API_VERSION 0x00000008
 #define NPY_1_18_API_VERSION 0x00000008
 #define NPY_1_19_API_VERSION 0x00000008
+
+// WebAssembly overrides
+#ifdef __wasm__
+
+// Enforce size definitions (overriding _numpyconfig.h)
+#define NPY_SIZEOF_SHORT SIZEOF_SHORT
+#define NPY_SIZEOF_INT SIZEOF_INT
+#define NPY_SIZEOF_LONG SIZEOF_LONG
+#define NPY_SIZEOF_FLOAT 4
+#define NPY_SIZEOF_COMPLEX_FLOAT 8
+#define NPY_SIZEOF_DOUBLE 8
+#define NPY_SIZEOF_COMPLEX_DOUBLE 16
+#define NPY_SIZEOF_LONGDOUBLE 8
+#define NPY_SIZEOF_COMPLEX_LONGDOUBLE 16
+#define NPY_SIZEOF_PY_INTPTR_T 4
+#define NPY_SIZEOF_OFF_T 4
+#define NPY_SIZEOF_PY_LONG_LONG 8
+
+#endif // __wasm__
 
 #endif
