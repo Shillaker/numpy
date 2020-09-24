@@ -120,6 +120,10 @@
 // WebAssembly overrides
 #ifdef __wasm__
 
+#define SIZEOF_PY_INTPTR_T 4
+#define SIZEOF_OFF_T 4
+#define SIZEOF_PY_LONG_LONG 8
+
 // Switch off all long-related maths functions
 #undef HAVE_SINL
 #undef HAVE_COSL
@@ -178,6 +182,18 @@
 #undef HAVE_CSQRTL
 #undef HAVE_CTANL
 #undef HAVE_CTANHL
+
+#define NPY_RELAXED_STRIDES_CHECKING 1
+
+// Use libc float printing
+#define HAVE_STRTOLL 1
+#define HAVE_STRTOULL 1
+#define HAVE_STRTOLD_L 1
+
+// Don't let numpy guess the long double format
+#define HAVE_LDOUBLE_IEEE_DOUBLE_LE 1
+
+#define NPY_PY3K 1
 
 #endif // __wasm__
 
