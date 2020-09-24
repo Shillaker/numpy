@@ -46,6 +46,7 @@
 #ifdef __wasm__
 
 // Enforce size definitions (overriding _numpyconfig.h)
+
 #define NPY_SIZEOF_SHORT SIZEOF_SHORT
 #define NPY_SIZEOF_INT SIZEOF_INT
 #define NPY_SIZEOF_LONG SIZEOF_LONG
@@ -59,8 +60,6 @@
 #define NPY_SIZEOF_OFF_T 4
 #define NPY_SIZEOF_LONGLONG 8
 #define NPY_SIZEOF_PY_LONG_LONG 8
-
-#undef NPY_HAVE_COMPLEX_LONG_DOUBLE
 
 #endif // __wasm__
 
