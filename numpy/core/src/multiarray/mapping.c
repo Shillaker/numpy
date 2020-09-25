@@ -877,6 +877,9 @@ index_has_memory_overlap(PyArrayObject *self,
  *
  * @return 0 on success -1 on failure
  */
+// This fixes a horrible bug in the wasm build where inlining this function
+// makes accessing values in an array break.
+__attribute__ ((noinline))
 static int
 get_item_pointer(PyArrayObject *self, char **ptr,
                     npy_index_info *indices, int index_num) {
